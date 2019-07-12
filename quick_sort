@@ -1,0 +1,33 @@
+int partition(string arr[], int l, int r)
+	{
+		int p, firsthigh; 
+		p = r;
+		firsthigh = l;
+		for (int i = l; i < r; i++)
+		{
+			step++;
+			if (arr[i] < arr[p]) 
+			{
+				string a = arr[i];
+				arr[i] = arr[firsthigh];
+				arr[firsthigh] = a;
+				firsthigh++;
+			}
+		}
+		string a = arr[p];
+		arr[p] = arr[firsthigh];
+		arr[firsthigh] = a;
+		return(firsthigh);
+	}
+	
+	void QS(string s[], int l, int r)
+	{
+		int p;
+		if ((r - l) > 0) {
+			step++;
+			p = partition(s, l, r);
+			//Divide array as into befor pivot and after pivot
+			QS(s, l, p - 1);
+			QS(s, p + 1, r);
+		}
+	}
