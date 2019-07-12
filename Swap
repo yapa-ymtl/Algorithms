@@ -1,0 +1,6 @@
+void swap(int i, int min, int arr[])
+{
+	int temp = arr[i];
+	arr[i] = arr[min];
+	arr[min] = temp;
+}
